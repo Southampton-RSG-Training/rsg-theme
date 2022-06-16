@@ -21,9 +21,9 @@
 [jupyter]: https://jupyter.org/
 [kramdown]: https://kramdown.gettalong.org/
 [lc-lessons]: https://librarycarpentry.org/lessons/
-[lesson-coc]: {{ relative_root_path }}{% link _includes/CODE_OF_CONDUCT.md %}
+[lesson-coc]: {{ relative_root_path }}
 [lesson-example]: https://carpentries.github.io/lesson-example/
-[lesson-license]: {{ relative_root_path }}{% link _includes/LICENSE.md %}
+[lesson-license]: {{ relative_root_path }}
 [lesson-mainpage]: {{ relative_root_path }}
 [mit-license]: https://opensource.org/licenses/mit-license.html
 [morea]: https://morea-framework.github.io/
