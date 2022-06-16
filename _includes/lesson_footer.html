@@ -5,7 +5,6 @@
 {% include gh_variables.html %}
 
 <footer>
-  <hr/>
   <div class="row">
     <div class="col-md-6 license" id="license-info" align="left">
 	{% if site.carpentry == "swc" %}
@@ -26,8 +25,6 @@
 	{% elsif site.carpentry == "cp" %}
 	Licensed under <a href="{{ site.cc_by_human }}">CC-BY 4.0</a> 2018–{{ 'now' | date: "%Y" }}
 	by <a href="{{ site.carpentries_site }}">The Carpentries</a>
-        {% elsif site.carpentry == "incubator" %}
-        Licensed under <a href="{{ site.cc_by_human }}">CC-BY 4.0</a> {{ 'now' | date: "%Y" }} by <a href="{{ relative_root_path }}{% link CITATION  %}">the authors</a>.
 	{% endif %}
     </div>
     <div class="col-md-6 help-links" align="right">
@@ -48,7 +45,10 @@
 	<a href="mailto:{{ site.email }}">Contact</a>
     </div>
   </div>
-  <p class="text-muted text-right">
-    <small><i>Using <a href="https://github.com/carpentries/carpentries-theme/">The Carpentries theme</a> &mdash; Site last built on: {{ site.time }}.</i></small>
-  </p>
+  <div class="row">
+    <div class="col-md-12" align="center">
+      Using <a href="https://github.com/carpentries/styles/">The Carpentries style</a>
+      version <a href="https://github.com/carpentries/styles/releases/tag/v9.5.3">9.5.3</a>.
+    </div>
+  </div>
 </footer>
