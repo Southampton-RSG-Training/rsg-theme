@@ -1,5 +1,5 @@
 ---
-layout: workshop      # DON'T CHANGE THIS.
+
 ---
 
 <h2 id="general">General Information</h2>
