@@ -1,5 +1,6 @@
 ---
-
+layout: workshop      # DON'T CHANGE THIS.
+permalink: /
 ---
 
 <h2 id="general">General Information</h2>
