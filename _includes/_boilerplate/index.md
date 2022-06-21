@@ -121,6 +121,6 @@ These are the installation instructions for the tools used
 during the workshop.
 {% endcomment %}
 
-{% elsif site.carpentry == "rsg" %}
+{% else if site.carpentry == "rsg" %}
 The instructions for all the software can be found <a href = "./setup"> on the setup page.</a>
 {% endif %}
