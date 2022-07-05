@@ -7,4 +7,4 @@ permalink: /
   {{ include workshop_index }}
 {% else if site.kind == lesson %}
   {{ include lesson_index }}
-{% end if %}
+{% endif %}
