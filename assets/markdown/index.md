@@ -1,5 +1,4 @@
 ---
-layout: {{ site.kind }}      # DON'T CHANGE THIS.
 permalink: /
 ---
 
