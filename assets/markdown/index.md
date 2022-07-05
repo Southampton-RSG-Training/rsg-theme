@@ -1,10 +1,10 @@
 ---
-layout: {{site.kind}}      # DON'T CHANGE THIS.
+layout: {{ site.kind }}      # DON'T CHANGE THIS.
 permalink: /
 ---
 
-if {% site.kind == workshop || site.kind == course %}
+{% if site.kind == workshop || site.kind == course %}
   {{ include workshop_index }}
-else if {% site.kind == lesson }}
+{% else if site.kind == lesson %}
   {{ include lesson_index }}
-end if
+{% end if %}
