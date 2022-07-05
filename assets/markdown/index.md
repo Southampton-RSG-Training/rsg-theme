@@ -1,6 +1,6 @@
 ---
 layout: {{ site.kind }}      # DON'T CHANGE THIS.
-permalink: /
+permalink: /index.html
 ---
 
 {% if site.kind == workshop || site.kind == course %}
