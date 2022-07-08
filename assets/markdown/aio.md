@@ -1,5 +1,5 @@
 ---
-permalink: /aio/index.html
+permalink: /aio.html
 ---
 
 {% comment %}
