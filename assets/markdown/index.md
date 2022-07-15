@@ -1,5 +1,6 @@
 ---
 permalink: /
+layout: workshop
 ---
 
 {% if site.kind == workshop || site.kind == course %}

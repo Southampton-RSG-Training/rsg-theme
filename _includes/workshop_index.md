@@ -22,11 +22,13 @@ DATE
 
 This block displays the date.
 {% endcomment %}
+{% if site.kind == "workshop" %}
 {% if site.humandate %}
 <p id="when">
   <strong>When:</strong>
   {{site.humandate}}.
 </p>
+{% endif %}
 {% endif %}
 
 {% comment %}
@@ -91,8 +93,13 @@ SURVEYS - These are set in the config and link to each workshops forms
 {% endcomment %}
 <h2 id="surveys">Surveys</h2>
 <p>Please be sure to complete these surveys before and after the workshop.</p>
+{% if site.startdate == "TBC" %}
+<p><a href="https://docs.google.com/forms/d/e/1FAIpQLSfgF9GMFdzwf5d_ghu3YSTNL6Jv0P87XQ8JmrdETWIzc2f34A/viewform?usp=pp_url&entry.80500075={{ site.form_title }}">Pre-workshop Survey</a></p>
+<p><a href="https://docs.google.com/forms/d/e/1FAIpQLSc5pr3v8E3wvigB1G7vUKv6i1_7sueuxvaltVv-7jEPev9EYg/viewform?usp=pp_url&entry.1699610390={{ site.form_title }}">Post-workshop Survey</a></p>
+{% else %}
 <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSfgF9GMFdzwf5d_ghu3YSTNL6Jv0P87XQ8JmrdETWIzc2f34A/viewform?usp=pp_url&entry.936097137={{ site.startdate }}&entry.80500075={{ site.form_title }}">Pre-workshop Survey</a></p>
 <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSc5pr3v8E3wvigB1G7vUKv6i1_7sueuxvaltVv-7jEPev9EYg/viewform?usp=pp_url&entry.1626695858={{ site.startdate }}&entry.1699610390={{ site.form_title }}">Post-workshop Survey</a></p>
+{% endif %}
 <hr/>
 
 {% comment %}

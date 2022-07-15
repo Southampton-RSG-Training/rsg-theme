@@ -8,6 +8,7 @@
       {% unless site.title == "Workshop Title" or site.title == "" %}
       <h1>{{site.title}}</h1>
       {% endunless %}
+
       {% if site.kind == "course" %}
       <h2>Self-learning course</h2>
       {% elsif site.venue == "online" %}
@@ -15,6 +16,7 @@
       {% else %}
       <h2>{{site.venue}}</h2>
       {% endif %}
+
       <div class="row">
         <div class="col-md-6">
           {% if site.venue == "online" %}
@@ -26,6 +28,7 @@
           <p>{% if site.humantime %}{{site.humantime}}{% endif %}</p>
         </div>
         <div class="col-md-6">
+          {% if site.kind != "course" %}
           <p>
           <strong>Instructors:</strong>
           {% if site.instructor %}
@@ -39,6 +42,7 @@
           <strong>Helpers:</strong>
           {{site.helper | join: ', ' %}}
           </p>
+          {% endif %}
           {% endif %}
         </div>
       </div>
