@@ -100,7 +100,7 @@ SURVEYS - These are set in the config and link to each workshops forms
 {% endif %}
 <hr/>
 
-{% include_relative blurb.html %}
+{% include blurb.html %}
 
 <hr/>
 
