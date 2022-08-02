@@ -1,5 +1,3 @@
-
-
 <h2 id="general">General Information</h2>
 {% if site.venue == "TBC" %}
 <p>
