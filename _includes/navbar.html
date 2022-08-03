@@ -17,12 +17,12 @@
 
       {% comment %} Select what logo to display. {% endcomment %}
       {% if site.carpentry == "rsg" %}
-      <a href="{{ site.rsg_site }}" class="pull-left">
+      <a href="{{ site.logo_site }}" class="pull-left">
         <img class="navbar-logo" src="{{ relative_root_path }}{% link /assets/img/home-logo.png %}" alt="RSG logo" />
       </a>
       {% endif %}
       {% comment %} Always show link to home page. {% endcomment %}
-      <a class="navbar-brand" href="{{ relative_root_path }}">Home</a>
+      <a class="navbar-brand" href="{{ site.url }}">Home</a>
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
