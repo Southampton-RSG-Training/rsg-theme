@@ -13,7 +13,7 @@ layout: workshop
   {% endif %}
 {% elsif site.kind == "lesson" %}
   {% if site.delivery == "static" %}
-    {% include lesson_index_static %}
+    {% include lesson_index_static.md %}
   {% elsif site.delivery == "dated" %}
     {% include lesson_index.md %}
   {% endif %}
