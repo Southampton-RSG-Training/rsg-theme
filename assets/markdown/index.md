@@ -6,9 +6,15 @@ layout: workshop
 <head><title>{{ site.title }}</title></head>
 
 {% if site.kind == "workshop" %}
-  {% include workshop_index.md %}
-{% elsif site.kind == "course" %}
-  {% include workshop_index.md %}
+  {% if site.delivery == "static" %}
+    {% include workshop_index_static.md %}
+  {% elsif site.delivery == "dated" %}
+    {% include workshop_index.md %}
+  {% endif %}
 {% elsif site.kind == "lesson" %}
-  {% include lesson_index.md %}
+  {% if site.delivery == "static" %}
+    {% include lesson_index_static %}
+  {% elsif site.delivery == "dated" %}
+    {% include lesson_index.md %}
+  {% endif %}
 {% endif %}

@@ -93,12 +93,10 @@ SURVEYS - These are set in the config and link to each workshops forms
 {% endcomment %}
 <h2 id="surveys">Surveys</h2>
 <p>Please be sure to complete this survey after the lesson.</p>
-{% if site.startdate == "TBC" %}
-<p><a href="https://docs.google.com/forms/d/e/1FAIpQLScX7g5AZ6sV7TzA4VPPrvBua55lD_rnif6GiPD2_TnuNBBlpg/viewform?usp=pp_url&entry.1679853141={{ site.form_title }}">Post-Lesson Survey</a></p>
-{% else %}
 <p><a href="https://docs.google.com/forms/d/e/1FAIpQLScX7g5AZ6sV7TzA4VPPrvBua55lD_rnif6GiPD2_TnuNBBlpg/viewform?usp=pp_url&entry.1679853141={{ site.form_title }}&entry.1100485531={{ site.startdate }}">Post-Lesson Survey</a></p>
-{% endif %}
 <hr/>
+
+<h2 id="blurb">Lesson Blurb</h2>
 
 {% include blurb.html %}
 

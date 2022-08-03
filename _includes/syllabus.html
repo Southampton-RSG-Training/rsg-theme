@@ -25,14 +25,14 @@
     {% endfor %}
 
     {% comment %}
-    If the lesson is a workshop then we want to use the start time and check for multi day if it is a course then we
+    If the lesson is a dated then we want to use the start time and check for multi day if it is static then we
     drop that information and just provide a running time.
     {% endcomment %}
-    {% if site.kind == "workshop" %}
-    {% assign current = include.start_time %}
-    {% else if site.kind == "course" %}
-    {% assign current = 0 %}
-    {% assign multiday = false %}
+    {% if site.delivery == "dated" %}
+        {% assign current = include.start_time %}
+    {% else if site.delivery == "static" %}
+        {% assign current = 0 %}
+        {% assign multiday = false %}
     {% endif %}
 
     <table class="table table-striped">

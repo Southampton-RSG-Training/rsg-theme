@@ -20,7 +20,7 @@
     <meta name="instructor" content="{{page.instructor|join:'|'}}" />
     <meta name="helper" content="{{page.helper|join:'|'}}" />
     <meta name="contact" content="{{page.email}}" />
-    <meta name="carpentry" content="{{site.carpentry}}"
+    <meta name="carpentry" content="{{site.carpentry}}">
     {% if page.redirect %}
     <meta http-equiv="refresh" content="0; url={{page.redirect}}" />
     {% endif %}
@@ -47,8 +47,12 @@
   <body>
     <div class="container">
       {% include navbar.html %}
-      {% include workshop_ad.html %}
-        {{ content }}
+      {% if site.delivery == "static" %}
+        {% include workshop_ad_static.html %}
+      {% elsif site.delivery == "dated" %}
+        {% include workshop_ad.html %}
+      {% endif %}
+      {{ content }}
       {% include workshop_footer.html %}
     </div>
     {% include javascript.html %}

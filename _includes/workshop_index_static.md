@@ -1,35 +1,4 @@
 <h2 id="general">General Information</h2>
-{% if site.venue == "TBC" %}
-<p>
-  <strong> Workshop location TBC </strong>
-</p>
-{% else if site.venue == "online" %}
-<p id="where">
-  Online at <a href="{{site.address}}">{{site.platform-name}}</a>.
-  If you need a password or other information to access the training,
-  the instructor will pass it on to you before the workshop.
-</p>
-{% else %}
-<p id="where">
-  <strong>Where:{{site.venue}}</strong>
-  <strong>Address:{{site.address}}</strong>
-</p>
-{% endif %}
-
-
-{% comment %}
-DATE
-
-This block displays the date.
-{% endcomment %}
-{% if site.kind == "workshop" %}
-{% if site.humandate %}
-<p id="when">
-  <strong>When:</strong>
-  {{site.humandate}}.
-</p>
-{% endif %}
-{% endif %}
 
 {% comment %}
 SPECIAL REQUIREMENTS
@@ -38,13 +7,8 @@ Modify the block below if there are any special requirements.
 {% endcomment %}
 <p id="requirements">
   <strong>Requirements:</strong>
-  {% if online == "false" %}
-    Participants must bring a laptop with a
-    Mac, Linux, or Windows operating system (not a tablet, Chromebook, etc.) that they have administrative privileges on.
-  {% else %}
     Participants must have access to a computer with a
     Mac, Linux, or Windows operating system (not a tablet, Chromebook, etc.) that they have administrative privileges on.
-  {% endif %}
   They should have a few specific software packages installed (listed <a href="#setup">below</a>).
 </p>
 
@@ -55,7 +19,7 @@ ACCESSIBILITY
   <strong>Accessibility:</strong>
 <p>
   We are dedicated to providing a positive and accessible learning environment for all. Please
-  notify the instructors in advance of the workshop if you require any accommodations or if there is
+  get in touch if you require any accommodations or if there is
   anything we can do to make this workshop more accessible to you.
 </p>
 
@@ -93,8 +57,11 @@ SURVEYS - These are set in the config and link to each workshop's forms
 {% endcomment %}
 <h2 id="surveys">Surveys</h2>
 <p>Please be sure to complete these surveys before and after attempting the material.</p>
-<p><a href="https://docs.google.com/forms/d/e/1FAIpQLSfgF9GMFdzwf5d_ghu3YSTNL6Jv0P87XQ8JmrdETWIzc2f34A/viewform?usp=pp_url&entry.936097137={{ site.startdate }}&entry.80500075={{ site.form_title }}">Pre-workshop Survey</a></p>
-<p><a href="https://docs.google.com/forms/d/e/1FAIpQLSc5pr3v8E3wvigB1G7vUKv6i1_7sueuxvaltVv-7jEPev9EYg/viewform?usp=pp_url&entry.1626695858={{ site.startdate }}&entry.1699610390={{ site.form_title }}">Post-workshop Survey</a></p>
+
+<p>Please input the date as the date you started the materials.</p>
+<p><a href="https://docs.google.com/forms/d/e/1FAIpQLSfgF9GMFdzwf5d_ghu3YSTNL6Jv0P87XQ8JmrdETWIzc2f34A/viewform?usp=pp_url&entry.80500075={{ site.form_title }}">Pre-workshop Survey</a></p>
+<p><a href="https://docs.google.com/forms/d/e/1FAIpQLSc5pr3v8E3wvigB1G7vUKv6i1_7sueuxvaltVv-7jEPev9EYg/viewform?usp=pp_url&entry.1699610390={{ site.form_title }}">Post-workshop Survey</a></p>
+
 <hr/>
 
 {% comment %}
