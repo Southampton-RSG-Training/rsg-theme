@@ -64,7 +64,7 @@ SURVEYS - These are set in the config and link to each lesson's forms
 <p><a href="https://docs.google.com/forms/d/e/1FAIpQLScX7g5AZ6sV7TzA4VPPrvBua55lD_rnif6GiPD2_TnuNBBlpg/viewform?usp=pp_url&entry.1679853141={{ site.form_title }}">Post-Lesson Survey</a></p>
 <hr/>
 
-<h2 id="blurb">Lesson Blurb</h2>
+<h2 id="blurb">Lesson Outline</h2>
 
 {% include blurb.html %}
 
