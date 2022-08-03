@@ -1,4 +1,7 @@
-<h2 id="general">General Information</h2>
+
+<p>
+  <h2 id="general">General Information</h2>
+</p>
 
 {% comment %}
 SPECIAL REQUIREMENTS

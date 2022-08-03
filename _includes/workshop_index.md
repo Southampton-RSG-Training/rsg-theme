@@ -1,4 +1,8 @@
-<h2 id="general">General Information</h2>
+
+<p>
+  <h2 id="general">General Information</h2>
+</p>
+
 {% if site.venue == "TBC" %}
 <p>
   <strong> Workshop location TBC </strong>
