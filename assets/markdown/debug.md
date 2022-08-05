@@ -9,6 +9,7 @@ process.
 
 List of Jekyll variables:
 
+<p>
 default_branch: {{ default_branch }}
 
 jekyll.environment: {{ jekyll.environment }}
@@ -30,4 +31,4 @@ site.baseurl: {{ site.baseurl }}
 site.url: {{ site.url }}
 
 source_branch: {{ source_branch }}
-
+</p>
