@@ -24,76 +24,73 @@
       {% comment %} Always show link to home page. {% endcomment %}
       <a class="navbar-brand" href="{{ relative_root_path }}/">Home</a>
     </div>
-
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-	{% comment %} Always show code of conduct. {% endcomment %}
+	    {% comment %} Always show code of conduct. {% endcomment %}
         <li><a href="{{ relative_root_path }}/code-of-conduct.html">Code of Conduct</a></li>
-
+        {% comment %} Show setup instructions. {% endcomment %}
+        <li><a href="{{ relative_root_path }}/setup.html">Setup</a></li>
         {% if site.kind == "lesson" %}
-	{% comment %} Show setup instructions. {% endcomment %}
-        <li><a href="{{ relative_root_path }}{% link setup.md %}">Setup</a></li>
-
-        {% comment %} Show lesson episodes for lessons. {% endcomment %}
-        {% if lesson_episodes.size > 0 %}
-        <li class="dropdown">
-          <a href="{{ relative_root_path }}/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Episodes <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            {% for lesson_episode in lesson_episodes %}
-            {% if site.episode_order %}
-              {% assign episode = site.episodes | where: "slug", lesson_episode | first %}
-            {% else %}
-              {% assign episode = lesson_episode %}
-            {% endif %}
-            <li><a href="{{ relative_root_path }}{{ episode.url }}">{{ episode.title }}</a></li>
-            {% endfor %}
-	    <li role="separator" class="divider"></li>
-            <li><a href="{{ relative_root_path }}/aio.html">All in one page (Beta)</a></li>
-          </ul>
-        </li>
+          {% comment %} Show lesson episodes for lessons. {% endcomment %}
+          {% if lesson_episodes.size > 0 %}
+          <li class="dropdown">
+            <a href="{{ relative_root_path }}/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Episodes <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              {% for lesson_episode in lesson_episodes %}
+              {% if site.episode_order %}
+                {% assign episode = site.episodes | where: "slug", lesson_episode | first %}
+              {% else %}
+                {% assign episode = lesson_episode %}
+              {% endif %}
+              <li><a href="{{ relative_root_path }}{{ episode.url }}">{{ episode.title }}</a></li>
+              {% endfor %}
+          <li role="separator" class="divider"></li>
+              <li><a href="{{ relative_root_path }}/aio.html">All in one page (Beta)</a></li>
+            </ul>
+          </li>
+          {% endif %}
         {% endif %}
-	{% endif %}
 
-  {% comment %} Add navbar for workshops {% endcomment %}
-  {% if site.kind != "lesson" %}
-        <li class="dropdown">
-          {% comment %} Create the "Lessons" entry in the navbar {% endcomment %}
-          <a href="{{ relative_root_path }}/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Lessons<span class="caret"></span></a>
-          {% comment %} Add each lesson into the dropdown on the navbar {% endcomment %}
-          <ul class="dropdown-menu">
-            {% for lesson in site.lessons %}
-              <li><a class=dropdown-item" href="{{ lesson.gh-name }}-schedule">{{ lesson.title }}</a></li>
-              <ul class=dropdown-submenu>
-                {% for episode in lesson.episodes %}
-                  <li><a class=dropdown-item> big nonce </a></li>
+        {% if site.kind != "lesson" %}
+          {% comment %} Show lessons for workshops. {% endcomment %}
+          <li class="dropdown">
+            {% comment %} Create the "Lessons" entry in the navbar {% endcomment %}
+            <a href="{{ relative_root_path }}/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Lessons<span class="caret"></span></a>
+            {% comment %} Add each lesson into the dropdown on the navbar {% endcomment %}
+            <ul class="dropdown-menu">
+              {% for lesson in site.lessons %}
+                <li><a class=dropdown-item" href="{{ lesson.gh-name }}-schedule">{{ lesson.title }}</a></li>
+                <ul class=dropdown-submenu>
+                  {% for episode in lesson.episodes %}
+                    <li><a class=dropdown-item> big nonce </a></li>
+                  {% endfor %}
+                </ul>
+              {% endfor %}
+            </ul>
+          </li>
+        {% endif %}
+
+        {% comment %} Show extras for lessons or if this is the main workshop-template repo (where they contain documentation). {% endcomment %}
+        {% if site.kind == "lesson" %}
+            <li class="dropdown">
+              <a href="{{ relative_root_path }}/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Extras <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="{{ relative_root_path }}/reference.html">Reference</a></li>
+                {% for lesson_extra in lesson_extras %}
+                {% if site.extras_order %}
+                  {% assign extra = site.extras | where: "slug", lesson_extra | first %}
+                {% else %}
+                  {% assign extra = lesson_extra %}
+                {% endif %}
+                <li><a href="{{ relative_root_path }}{{ extra.url }}">{{ extra.title }}</a></li>
                 {% endfor %}
               </ul>
-            {% endfor %}
-          </ul>
-        </li>
-  {% endif %}
+            </li>
+        {% endif %}
 
-	{% comment %} Show extras for lessons or if this is the main workshop-template repo (where they contain documentation). {% endcomment %}
-	{% if site.kind == "lesson" %}
-        <li class="dropdown">
-          <a href="{{ relative_root_path }}/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Extras <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="{{ relative_root_path }}/reference.html">Reference</a></li>
-            {% for lesson_extra in lesson_extras %}
-            {% if site.extras_order %}
-              {% assign extra = site.extras | where: "slug", lesson_extra | first %}
-            {% else %}
-              {% assign extra = lesson_extra %}
-            {% endif %}
-            <li><a href="{{ relative_root_path }}{{ extra.url }}">{{ extra.title }}</a></li>
-            {% endfor %}
-          </ul>
-        </li>
-	{% endif %}
-
-	{% comment %} Always show license. {% endcomment %}
-    <li><a href="{{ relative_root_path }}/licence.html">License</a></li>
-	<li><a href="{{ repo_url }}/" data-checker-ignore>Improve this page <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></li>
+        {% comment %} Always show license. {% endcomment %}
+        <li><a href="{{ relative_root_path }}/licence.html">License</a></li>
+        <li><a href="{{ repo_url }}/" data-checker-ignore>Improve this page <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></li>
       </ul>
       <form class="navbar-form navbar-right" role="search" id="search" onsubmit="google_search(); return false;">
         <div class="form-group">
