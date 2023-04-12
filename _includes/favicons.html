@@ -1,4 +1,4 @@
-{% assign favicon_url = relative_root_path | append: '/assets/favicons/' | append: site.carpentry  %}
+    {% assign favicon_url = relative_root_path | append: '/assets/favicons/' | append: site.carpentry  %}
 
 {% if site.carpentry == 'rsg' %}
 {% assign carpentry = 'Research Software Group' %}
@@ -14,10 +14,11 @@
     <link rel="apple-touch-icon-precomposed" sizes="76x76" href="{{ favicon_url }}/apple-touch-icon-76x76.png" />
     <link rel="apple-touch-icon-precomposed" sizes="152x152" href="{{ favicon_url }}/apple-touch-icon-152x152.png" />
     <link rel="icon" type="image/png" href="{{ favicon_url }}/favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="{{ favicon_url }}/favicon-180x180.png" sizes="180x180" />
     <link rel="icon" type="image/png" href="{{ favicon_url }}/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="{{ favicon_url }}/favicon-64x64.png" sizes="64x64" />    
     <link rel="icon" type="image/png" href="{{ favicon_url }}/favicon-32x32.png" sizes="32x32" />
     <link rel="icon" type="image/png" href="{{ favicon_url }}/favicon-16x16.png" sizes="16x16" />
-    <link rel="icon" type="image/png" href="{{ favicon_url }}/favicon-128.png" sizes="128x128" />
     <meta name="application-name" content="{{ carpentry }} - {{ site.title }}"/>
     <meta name="msapplication-TileColor" content="#FFFFFF" />
     <meta name="msapplication-TileImage" content="{{ favicon_url }}/mstile-144x144.png" />
