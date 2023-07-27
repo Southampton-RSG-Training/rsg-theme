@@ -19,7 +19,7 @@ $(".solution").each(function() {
 });
 
 // Handle foldable callout boxes (on click and at start)
-$(".hidden").click(function(event) {
+$(".hidden-callout").click(function(event) {
     var trigger = $(event.target).has(".fold-unfold").length > 0
                || $(event.target).filter(".fold-unfold").length > 0;
     if (trigger) {
@@ -28,7 +28,7 @@ $(".hidden").click(function(event) {
         event.stopPropagation();
     }
 });
-$(".hidden").each(function() {
+$(".hidden-callout").each(function() {
     $(">*:not(h2)", this).toggle();
     var h2 = $("h2:first", this);
     h2.append("<span class='fold-unfold glyphicon glyphicon-collapse-down'></span>");

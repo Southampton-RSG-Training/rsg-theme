@@ -39,7 +39,7 @@ $color-objectives:  #daee84 !default;
 $color-prereq:      #9cd6dc !default;
 $color-solution:    #ded4b9 !default;
 $color-testimonial: #fc8dc1 !default;
-$color-hidden:      #f4fd9c !default;
+$color-hidden-callout:      #f4fd9c !default;
 
 //----------------------------------------
 // Specialized code blocks.
@@ -200,7 +200,7 @@ $codeblock-padding: 5px !default;
 .objectives{ @include bkSetup($color-objectives, "\e085"); }
 .prereq{ @include bkSetup($color-prereq, "\e124"); }
 .solution{ @include bkSetup($color-solution, "\e105"); }
-.hidden{ @include bkSetup($color-hidden, "\e146"); }
+.hidden-callout{ @include bkSetup($color-hidden-callout, "\e146"); }
 .testimonial{ @include bkSetup($color-testimonial, "\e143"); }
 
 .callout h3,
@@ -211,7 +211,7 @@ $codeblock-padding: 5px !default;
 .objectives h3,
 .prereq h3,
 .solution h3,
-.hidden h3,
+.hidden-callout h3,
 .testimonial h3 {
 font-size: 18px;
 }
@@ -225,7 +225,7 @@ font-size: 18px;
 .objectives   { background-color: #daee8420; }
 .prereq       { background-color: #9cd6dc20; }
 .solution     { background-color: #ded4b94d; }
-.hidden       { background-color: #f4fd9c20; }
+.hidden-callout       { background-color: #f4fd9c20; }
 .testimonial  { background-color: #fc8dc120; }
 
 blockquote p {
@@ -421,7 +421,7 @@ kbd {
 }
 
 @media print {
-  blockquote.hidden > * {
+  blockquote.hidden-callout > * {
     display: unset !important;
   }
 }
